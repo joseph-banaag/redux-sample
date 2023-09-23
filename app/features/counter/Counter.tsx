@@ -5,6 +5,8 @@ import { increment, decrement, incrementByAmount } from "@/app/features/counter/
 export default function Counter() {
     const count = useAppSelector(state => state.counter.count)
     const dispatch = useAppDispatch()
+
+    console.log(count)
     return (
         <>
             <h1 className="text-9xl text-white text-center">{count}</h1>

@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import * as React from "react"
+import { DataContextProvider } from "@/app/context/DataContext"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <React.StrictMode>
+          <DataContextProvider>
             {children}
+          </DataContextProvider>
         </React.StrictMode>
       </body>
     </html>
