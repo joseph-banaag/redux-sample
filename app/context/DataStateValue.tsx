@@ -22,7 +22,7 @@ export default function DataStateValue() {
                     onChange={(e) => setData(e.target.value)}
                     value={data}
                     className="px-2 py-3 rounded-md"
-                    placeholder="change this text"
+                    placeholder="This is using useContext"
                 />
                 <button type="submit" className="bg-indigo-500 p-3 rounded-2xl text-white font-semibold">Submit</button>
             </form>

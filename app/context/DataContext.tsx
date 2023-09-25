@@ -11,8 +11,6 @@ const DataContext = createContext<DataContextType | undefined>(undefined)
 export const DataContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [data, setData] = useState<string>("")
 
-    console.log(data)
-
     return (
         <DataContext.Provider value={{
             data,
