@@ -3,7 +3,15 @@ import { UseData } from "@/app/context/DataContext"
 
 
 export default function DataStateValue() {
-    const { setData, data } = UseData()
+    const { 
+        setData, data,
+        newSwitch, updateSwitch
+     } = UseData()
+
+    const handleChange = () => {
+        updateSwitch("The button is clicked")
+        alert(newSwitch)
+    }
 
 
     const handleSubmit = (e: any) => {
@@ -24,7 +32,7 @@ export default function DataStateValue() {
                     className="px-2 py-3 rounded-md"
                     placeholder="This is using useContext"
                 />
-                <button type="submit" className="bg-indigo-500 p-3 rounded-2xl text-white font-semibold">Submit</button>
+                <button onClick={handleChange} type="submit" className="bg-indigo-500 p-3 rounded-2xl text-white font-semibold">Submit</button>
             </form>
         </>
     )

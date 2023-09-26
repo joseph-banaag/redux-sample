@@ -3,12 +3,15 @@ import { RootState } from "@/app/redux/store"
 
 export interface CounterState {
     count: number
+    message: string
 }
 
 const initialState: CounterState = {
-    count: 0
+    count: 0,
+    message: ""
 }
 
+const message = "sample text"
 export const counterSlice = createSlice({
     name: "counter",
     initialState,
@@ -25,11 +28,14 @@ export const counterSlice = createSlice({
         },
         incrementByAmount: (state, action: PayloadAction<number>) => {
             state.count += action.payload
+        },
+        sampleText: state => {
+            state.message = message
         }
     }
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, sampleText } = counterSlice.actions
 
 export const selectCount = (state: RootState) => state.counter.count
 
