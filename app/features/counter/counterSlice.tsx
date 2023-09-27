@@ -11,7 +11,7 @@ const initialState: CounterState = {
     message: ""
 }
 
-const message = "sample text"
+const message = "sample text" as string
 export const counterSlice = createSlice({
     name: "counter",
     initialState,
