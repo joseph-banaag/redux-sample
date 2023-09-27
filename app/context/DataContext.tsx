@@ -5,7 +5,9 @@ interface DataContextType {
     data: string
     setData: (data: string) => void
     newSwitch: string,
-    updateSwitch: (updatedSwitch: string) => void
+    updateSwitch: (updatedSwitch: string) => void,
+    currentUser: null
+    setCurrentUser: (currentUser: null) => void,
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined)
@@ -13,6 +15,7 @@ const DataContext = createContext<DataContextType | undefined>(undefined)
 export const DataContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [data, setData] = useState<string>("")
     const [newSwitch, setNewSwitch] = useState<string>("")
+    const [currentUser, setCurrentUser] = useState<null>(null)
 
     const updateSwitch = (updatedSwitch: string) => {
         setNewSwitch(updatedSwitch)
@@ -21,7 +24,8 @@ export const DataContextProvider = ({ children }: { children: React.ReactNode })
     return (
         <DataContext.Provider value={{
             data, setData,
-            newSwitch, updateSwitch
+            newSwitch, updateSwitch,
+            currentUser, setCurrentUser
         }}>
             {children}
         </DataContext.Provider>
